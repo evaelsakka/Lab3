@@ -4,7 +4,7 @@ import os
 
 class FilteredImage:
     def __init__(self, photo_path):
-                while True:
+        while True:
             if not os.path.isfile(photo_path):
                 print("Invalid image path.")
                 photo_path = input("Enter a valid path of the image file: ")
@@ -14,7 +14,7 @@ class FilteredImage:
         self.img = Image.open(photo_path)
 
     def apply_filter(self, filter_choice):
-                while True:
+        while True:
             if filter_choice not in ["grayscale", "error_diffusion", "sepia", "negative"]:
                 print("Invalid filter type.")
                 filter_choice = input("Enter one of the following filter types (grayscale, error_diffusion, sepia, negative): ")
@@ -34,7 +34,6 @@ class FilteredImage:
         elif filter_choice == "negative":
             self.img = self.negative()
             filter_name = "Negative"
-        else:
 
         # Save the filtered image in the same directory with the same name
         directory = os.path.dirname(self.image_path)
@@ -42,7 +41,7 @@ class FilteredImage:
         new_filename = f"{filename}_{filter_name}{file_extension}"
         new_file_path = os.path.join(directory, new_filename)
         self.img.save(new_file_path)
-        print("Filtered image saved under", new_file_path)
+        print("Filtered image was saved under", new_file_path)
 
     def error_diffusion(self):
         img = self.img.convert("L")
