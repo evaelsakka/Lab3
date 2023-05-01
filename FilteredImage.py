@@ -4,10 +4,23 @@ import os
 
 class FilteredImage:
     def __init__(self, photo_path):
+                while True:
+            if not os.path.isfile(photo_path):
+                print("Invalid image path.")
+                photo_path = input("Enter a valid path of the image file: ")
+            else:
+                break
         self.image_path = photo_path
         self.img = Image.open(photo_path)
 
     def apply_filter(self, filter_choice):
+                while True:
+            if filter_choice not in ["grayscale", "error_diffusion", "sepia", "negative"]:
+                print("Invalid filter type.")
+                filter_choice = input("Enter one of the following filter types (grayscale, error_diffusion, sepia, negative): ")
+            else:
+                break
+
         # Apply the selected filter
         if filter_choice == "grayscale":
             self.img = self.grayscale()
@@ -22,8 +35,6 @@ class FilteredImage:
             self.img = self.negative()
             filter_name = "Negative"
         else:
-            print("Invalid filter type")
-            return
 
         # Save the filtered image in the same directory with the same name
         directory = os.path.dirname(self.image_path)
@@ -31,7 +42,7 @@ class FilteredImage:
         new_filename = f"{filename}_{filter_name}{file_extension}"
         new_file_path = os.path.join(directory, new_filename)
         self.img.save(new_file_path)
-        print("Filtered image saved as", new_file_path)
+        print("Filtered image saved under", new_file_path)
 
     def error_diffusion(self):
         img = self.img.convert("L")
@@ -83,5 +94,5 @@ class FilteredImage:
 if __name__ == "__main__":
     image_path = input("Enter the path of the image file: ")
     filtered_image = FilteredImage(image_path)
-    filter_type = input("Enter the filter type (grayscale, error_diffusion, sepia, negative): ")
+    filter_type = input("Enter a valid filter type (grayscale, error_diffusion, sepia, negative): ")
     filtered_image.apply_filter(filter_type)
