@@ -14,7 +14,7 @@ Since this program uses the `Pillow` module (A fork of the Python Imaging Librar
 To do so, open your command-line shell and run the following command:
 
 ```bash
-pip install Pillow
+pip3 install Pillow
 ```
 
 Now you should be all set to run the program without any issues. 
