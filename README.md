@@ -27,11 +27,11 @@ python3 FilteredImage.py
 
 A prompt will ask you to enter the path of the image file you want to apply a filter to.
 
-Make sure to enter a valid image path, and hit `enter`/`return` on your keybaord.
+Make sure to enter a valid image path, and hit `enter`/`return` on your keyboard.
 
 Another prompt should ask you to choose one of four filter types; `grayscale`, `error_diffusion`, `sepia`, and `negative`.
 
-Make sure to enter a valid filter type and also hit the `enter`/`return` key on your keybaord.
+Make sure to enter a valid filter type and also hit the `enter`/`return` key on your keyboard.
 
 A new image with the applied filter should be processed and saved in the same directory of the original image. 
 
