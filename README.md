@@ -16,8 +16,17 @@ To do so, open your command-line shell and run the following command:
 ```bash
 pip3 install Pillow
 ```
+You might sometimes encounter an issue while trying to install the `Pillow` module. 
 
-Now you should be all set to run the program without any issues. 
+This could be due to an older / unsupported version.
+
+Make sure that you have the latest version of `pip3` installed by running the following command:
+
+```bash
+pip3 install --upgrade pip
+```
+
+You should now be all set to run the program without any issues. 
 
 In your command-line shell, switch to the directory where you downloaded the `FilteredImage.py` file and run the following command: 
 
