@@ -20,7 +20,7 @@ You might sometimes encounter an issue while trying to install the `Pillow` modu
 
 This could be due to an older / unsupported version.
 
-Make sure that you have the latest version of `pip3` installed by running the following command:
+Make sure that you have the latest version of `pip3` installed before installing the `Pillow` module, and that's by running the following command:
 
 ```bash
 pip3 install --upgrade pip
